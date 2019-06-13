@@ -1,4 +1,4 @@
-import {createGlobalStyle} from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
 export const GlobalIconFont = createGlobalStyle`
  @font-face {font-family: "iconfont";

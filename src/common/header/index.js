@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
     HeaderWrapper, Logo, Nav, NavItem, NavSearch, Addition, Btn, SearchWrapper, SearchInfo
     , SearchInfoTitle, SearchInfoSwitch, SearchInfoItem, SearchInfoList
 } from './style';
-import {CSSTransition} from 'react-transition-group';
-import {connect} from 'react-redux';
-import {actionCreators} from './store';
+import { CSSTransition } from 'react-transition-group';
+import { connect } from 'react-redux';
+import { actionCreators } from './store';
 
 
 class Header extends Component {
