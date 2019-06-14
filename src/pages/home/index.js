@@ -1,17 +1,27 @@
 import React, { Component } from 'react';
 import { HomeWrapper, HomeLeft, HomeRight } from "./style";
-import Banner from './banner/index';
+import Banner from './components/banner';
+import Topic from './components/topic';
+import List from './components/list';
+import Writter from './components/writter';
+import Recommend from './components/recommend';
+
 
 class Home extends Component {
     render() {
         return (
-            <HomeWrapper>
+            <HomeWrapper className="clearfix">
                 <HomeLeft>
-                    <div>
+                    <div className="some">
                         <Banner/>
                     </div>
+                    <Topic/>
+                    <List/>
                 </HomeLeft>
-                <HomeRight>right</HomeRight>
+                <HomeRight>
+                    <Recommend/>
+                    <Writter/>
+                </HomeRight>
             </HomeWrapper>
         );
     }
