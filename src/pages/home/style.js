@@ -48,3 +48,7 @@ export const TopicItem = styled.div`
         margin-right: 10px;
     }
 `;
+
+export const ListItem = styled.div`
+    
+`;
