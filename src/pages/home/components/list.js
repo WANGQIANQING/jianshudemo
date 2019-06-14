@@ -5,7 +5,7 @@ class List extends Component {
     render() {
         return (
             <ListItem>
-                <img/>
+                <img alt="fsf"/>
             </ListItem>
         );
     }

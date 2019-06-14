@@ -1,19 +1,13 @@
 import { fromJS } from 'immutable';
-import pic1 from '../../../statics/logo.jpg';
+import * as actionTypes from './actionTypes';
 const defaultState = fromJS({
-    topicList: [{
-        id: 1,
-        title: '今日热点',
-        imgUrl: pic1
-    },{
-        id: 2,
-        title: '手绘',
-        imgUrl: pic1
-    }]
+    topicList: []
 });
 
 export default (state = defaultState, action) => {
     switch (action.type) {
+        case actionTypes.CHANGE_TOPIC_LIST:
+            return state.set('topicList', fromJS(action.data));
         default:
             return state;
     }
