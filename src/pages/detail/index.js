@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
+import { DetailWrapper, Header, Content } from './style';
 
 class Detail extends Component {
     render() {
         return (
-            <div>Detail</div>
+            <DetailWrapper className="clearfix">
+                <Header></Header>
+                <Content>
+                    <img src="" alt=""/>
+                </Content>
+            </DetailWrapper>
         );
     }
 }

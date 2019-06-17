@@ -1,20 +1,68 @@
-import React, { Component } from 'react';
-import { HomeWrapper, HomeLeft, HomeRight } from "./style";
-import Banner from './banner/index';
+import React, { PureComponent } from 'react';
+import { HomeWrapper, HomeLeft, HomeRight, BackTop } from "./style";
+import Banner from './components/banner';
+import Topic from './components/topic';
+import List from './components/list';
+import Writer from './components/writer';
+import Recommend from './components/recommend';
+import { actionCreators } from './store';
+import { connect } from 'react-redux';
 
-class Home extends Component {
+
+class Home extends PureComponent {
+
+    handleScrollTop() {
+        window.scrollTo(0, 0);
+    }
+
+    componentDidMount() {
+        this.props.changeHomeData();
+        this.bindEvents();
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.props.changeScrollTopShow);
+    }
+
+    bindEvents() {
+        window.addEventListener('scroll', this.props.changeScrollTopShow);
+    }
+
     render() {
         return (
-            <HomeWrapper>
+            <HomeWrapper className="clearfix">
                 <HomeLeft>
-                    <div>
+                    <div className="some">
                         <Banner/>
                     </div>
+                    <Topic/>
+                    <List/>
                 </HomeLeft>
-                <HomeRight>right</HomeRight>
+                <HomeRight>
+                    <Recommend/>
+                    <Writer/>
+                </HomeRight>
+                {this.props.showScroll ? <BackTop onClick={this.handleScrollTop}>顶部</BackTop> : null}
             </HomeWrapper>
         );
     }
 }
 
-export default Home;
+const mapState = (state) => ({
+    showScroll: state.getIn(['home', 'showScroll'])
+});
+
+const mapDispatch = (dispatch) => ({
+    changeHomeData() {
+        dispatch(actionCreators.getHomeInfo());
+    },
+    changeScrollTopShow() {
+        if (document.documentElement.scrollTop > 100) {
+            dispatch(actionCreators.toggleTopShow(true));
+        } else {
+            dispatch(actionCreators.toggleTopShow(false));
+        }
+    }
+});
+
+export default connect(mapState, mapDispatch)(Home);
