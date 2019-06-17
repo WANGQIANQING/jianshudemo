@@ -4,7 +4,9 @@ import * as actionTypes from './actionTypes';
 const defaultState = fromJS({
     topicList: [],
     articleList: [],
-    recommendList: []
+    recommendList: [],
+    articlePage: 1,
+    showScroll: false
 });
 
 export default (state = defaultState, action) => {
@@ -15,6 +17,13 @@ export default (state = defaultState, action) => {
                 articleList: fromJS(action.articleList),
                 recommendList: fromJS(action.recommendList)
             });
+        case actionTypes.ADD_ARTICLE_LIST:
+            return state.merge({
+                articleList: state.get('articleList').concat(fromJS(action.list)),
+                articlePage: action.nextPage
+            });
+        case actionTypes.TOGGLE_SCROLL_TOP:
+            return state.set('showScroll', action.show);
         default:
             return state;
     }
