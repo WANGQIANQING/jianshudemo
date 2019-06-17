@@ -1,14 +1,8 @@
 import React, { Component } from 'react';
 import { TopicWrapper, TopicItem } from '../style';
 import { connect } from 'react-redux';
-import { actionCreators } from '../store';
 
 class Topic extends Component {
-
-    componentDidMount() {
-        this.props.changeTopicList();
-    }
-
     render() {
         const { list } = this.props;
         return (
@@ -30,14 +24,9 @@ class Topic extends Component {
     }
 }
 
-const mapStateToProps = (state) => ({
-    list: state.get('home').get('topicList')
+const mapState = (state) => ({
+    list: state.getIn(['home', 'topicList'])
 });
 
-const MapDispatchToProps = (dispatch) => ({
-    changeTopicList() {
-        dispatch(actionCreators.getList());
-    }
-});
 
-export default connect(mapStateToProps, MapDispatchToProps)(Topic);
+export default connect(mapState, null)(Topic);

@@ -1,1 +1,1 @@
-export const CHANGE_TOPIC_LIST = 'home/CHANGE_TOPIC_LIST';
+export const CHANGE_HOME_DATA = 'home/CHANGE_HOME_DATA';
