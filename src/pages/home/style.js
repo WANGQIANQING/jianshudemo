@@ -6,8 +6,9 @@ export const HomeWrapper = styled.div`
 `;
 
 export const HomeLeft = styled.div`
-    width: 650px;
+    width: 625px;
     margin-left: 15px;
+    margin-right: 20px;
     padding-top: 30px
     float: left;
     .some {
@@ -17,6 +18,7 @@ export const HomeLeft = styled.div`
 `;
 
 export const HomeRight = styled.div`
+    padding: 2px 0 0;
     width: 280px;
     float: right;
 `;
@@ -67,6 +69,9 @@ export const ListItem = styled.div`
         font-weight: bold;
         color: #333;
     }
+    .title: hover {
+        text-decoration:underline;
+    }
     .desc {
         line-height: 18px;
         font-size: 13px;
@@ -75,12 +80,11 @@ export const ListItem = styled.div`
 `;
 
 export const ListInfo = styled.div`
-    width: 500px;
+    width: 458px;
     float: left;
 `;
 
 export const RecommendWrapper = styled.div`
-    margin: 2px 0;
     width: 280px;
 `;
 export const RecommendItem = styled.div`
