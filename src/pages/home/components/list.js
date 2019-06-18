@@ -1,20 +1,19 @@
 import React, { PureComponent } from 'react';
 import { ListItem, ListInfo, LoadMore } from '../style';
-import pic1 from '../../../statics/listItem1.jpg';
 import { connect } from 'react-redux';
 import { actionCreators } from '../store';
 import { Link } from 'react-router-dom';
 
 class List extends PureComponent {
     render() {
-        const { list, getMoreList, page } = this.props;
+        const {list, getMoreList, page} = this.props;
         return (
             <div>
                 {list.map((item, index) => {
                     return (
                         <Link key={index} to="/detail">
                             <ListItem className="clearfix">
-                                <img className="pic1" src={pic1} alt="pic1"/>
+                                <img className="pic1" src={item.get('imgUrl')} alt="pic1"/>
                                 <ListInfo>
                                     <h3 className="title">{item.get('title')}</h3>
                                     <p className="desc">{item.get('desc')}</p>
@@ -26,7 +25,7 @@ class List extends PureComponent {
                 <LoadMore
                     onClick={() => getMoreList(page)}
                 >
-                    更多文字
+                    阅读更多
                 </LoadMore>
             </div>
         );
