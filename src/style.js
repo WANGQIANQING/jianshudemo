@@ -49,10 +49,6 @@ a{
   text-decoration: none;
   -webkit-backface-visibility: hidden;
 }
-::-webkit-scrollbar{
-  width: 5px;
-  height: 5px;
-}
 ::-webkit-scrollbar-track-piece{
   background-color: rgba(0, 0, 0, 0.2);
   -webkit-border-radius: 6px;
