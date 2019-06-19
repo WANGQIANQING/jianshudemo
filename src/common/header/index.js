@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 
 class Header extends Component {
     render() {
-        const { focused, inputFocus, inputBlur, list } = this.props;
+        const { focused, inputFocus, inputBlur, list, login } = this.props;
         return (
             <HeaderWrapper>
                 <Link to="/">
@@ -20,7 +20,11 @@ class Header extends Component {
                 <Nav>
                     <NavItem className="left active">首页</NavItem>
                     <NavItem className="left">下载App</NavItem>
-                    <NavItem className="right">登录</NavItem>
+                    {
+                        login ?
+                            <NavItem className="right">退出</NavItem> :
+                            <Link to="/login"><NavItem className="right">登录</NavItem></Link>
+                    }
                     <NavItem className="right"><span className="iconfont">&#xe636;</span></NavItem>
                     <SearchWrapper>
                         <CSSTransition
@@ -89,7 +93,8 @@ const mapStateToProps = (state) => {
         list: state.getIn(['header', 'list']),
         page: state.getIn(['header', 'page']),
         mouseIn: state.getIn(['header', 'mouseIn']),
-        totalPage: state.getIn(['header', 'totalPage'])
+        totalPage: state.getIn(['header', 'totalPage']),
+        login: state.getIn(['login', 'login'])
     };
 };
 

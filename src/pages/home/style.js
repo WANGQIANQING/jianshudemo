@@ -55,7 +55,7 @@ export const TopicItem = styled.div`
 export const ListItem = styled.div`
     padding: 20px 0;
     border-bottom: 1px solid #dcdcdc;
-    .pic1 {
+    .pic {
         width: 150px;
         height: 100px;
         display: block;
@@ -122,9 +122,11 @@ export const BackTop = styled.div`
     width: 50px;
     right: 50px;
     bottom: 50px;
-    font-size: 14px;
     height: 50px;
     line-height: 50px;
     text-align: center;
     border: 1px solid #ccc;
+    span {
+        font-size: 27px;
+    }
 `;
