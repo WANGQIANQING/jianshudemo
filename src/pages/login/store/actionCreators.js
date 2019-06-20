@@ -18,3 +18,8 @@ export const login = (account, password) => {
         });
     };
 };
+
+export const logout = () => ({
+    type: actionTypes.LOGOUT,
+    value: false
+});

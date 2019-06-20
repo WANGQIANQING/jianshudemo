@@ -40,6 +40,9 @@ export const NavItem = styled.div`
     &.right {
         float: right;
         color: #969696;
+        :hover {
+            cursor: pointer;
+        }
     }
     &.active {
         color: #ea6f5a;

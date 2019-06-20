@@ -15,3 +15,8 @@ export const getDetail = (id) => {
         });
     }
 };
+
+export const toggleTopShow = (show) => ({
+    type: actionTypes.TOGGLE_SCROLL_TOP,
+    show
+});
