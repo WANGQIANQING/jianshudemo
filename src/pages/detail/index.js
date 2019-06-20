@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { DetailWrapper, Header, Content, Support } from './style';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { actionCreators } from './store';
 
 class Detail extends PureComponent {
@@ -8,7 +9,7 @@ class Detail extends PureComponent {
         return (
             <DetailWrapper>
                 <Header>{this.props.title}</Header>
-                <Content dangerouslySetInnerHTML={{__html: this.props.content}}/>
+                <Content dangerouslySetInnerHTML={{ __html: this.props.content }}/>
                 <Support>
                     <p>小礼物走一走，来简书关注我</p>
                     <div className="btn btn-pay">赞赏支持</div>
@@ -33,4 +34,4 @@ const mapDispatch = (dispatch) => ({
     }
 });
 
-export default connect(mapState, mapDispatch)(Detail);
+export default connect(mapState, mapDispatch)(withRouter(Detail));
