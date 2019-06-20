@@ -3,7 +3,8 @@ import * as actionTypes from './actionTypes';
 
 const defaultState = fromJS({
     title: '',
-    content: ''
+    content: '',
+    showScroll: false
 });
 
 
@@ -14,6 +15,8 @@ export default (state = defaultState, action) => {
                 title: action.title,
                 content: action.content
             });
+        case actionTypes.TOGGLE_SCROLL_TOP:
+            return state.set('showScroll', action.show);
         default:
             return state;
     }

@@ -19,11 +19,11 @@ class Header extends Component {
                     <Logo/>
                 </Link>
                 <Nav>
-                    <NavItem className="left active">首页</NavItem>
+                    <Link to="/"><NavItem className="left active">首页</NavItem></Link>
                     <NavItem className="left">下载App</NavItem>
                     {
                         login ?
-                            <NavItem className="right" onClick={logout}>退出</NavItem> :
+                            <Link to="/"><NavItem className="right" onClick={logout}>退出</NavItem></Link> :
                             <Link to="/login"><NavItem className="right">登录</NavItem></Link>
                     }
                     <NavItem className="right"><span className="iconfont">&#xe636;</span></NavItem>
