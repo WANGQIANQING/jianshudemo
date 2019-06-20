@@ -1,22 +1,35 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
-import { LoginWrapper, LoginBox, Input, Button } from './style';
+import { Redirect, Link } from 'react-router-dom';
+import { LoginWrapper, LoginBox, Input, Button, LogoImg, TitleWrapper,Form } from './style';
 import { actionCreators } from './store';
+import logoPic from '../../statics/logoLogin.png';
 
 class Login extends PureComponent {
     render() {
-        const { loginStatus } = this.props;
+        const {loginStatus} = this.props;
         if (!loginStatus) {
             return (
                 <LoginWrapper>
+                    <Link to="/">
+                        <LogoImg src={logoPic}/>
+                    </Link>
                     <LoginBox>
-                        <Input placeholder="账号" ref={(input) => {
-                            this.account = input
-                        }}/>
-                        <Input type="password" placeholder="密码" ref={(input) => {
-                            this.password = input
-                        }}/>
+                        <TitleWrapper>
+                            <Link to="/login"><span className="login">登陆</span></Link>
+                            <b>·</b>
+                            <Link to="/register"><span className="register">注册</span></Link>
+                        </TitleWrapper>
+                        <Form>
+                            <i className="iconfont account"></i>
+                            <Input className="account" placeholder="手机号或邮箱" ref={(input) => {
+                                this.account = input
+                            }}/>
+                            <i className="iconfont password"></i>
+                            <Input className="password" type="password" placeholder="密码" ref={(input) => {
+                                this.password = input
+                            }}/>
+                        </Form>
                         <Button onClick={() => this.props.login(this.account, this.password)}>登录</Button>
                     </LoginBox>
                 </LoginWrapper>

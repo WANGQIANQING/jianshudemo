@@ -125,8 +125,12 @@ export const BackTop = styled.div`
     height: 50px;
     line-height: 50px;
     text-align: center;
-    border: 1px solid #ccc;
+    border: 1px solid #dadada;
+    :hover {
+        background: #f9f9f9;
+    }
     span {
-        font-size: 27px;
+        font-size: 22px;
+        color: #333;
     }
 `;
