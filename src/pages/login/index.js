@@ -1,13 +1,13 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { Redirect, Link } from 'react-router-dom';
-import { LoginWrapper, LoginBox, Input, Button, LogoImg, TitleWrapper,Form } from './style';
+import { LoginWrapper, LoginBox, Input, Button, LogoImg, TitleWrapper, Form, LoginProblem } from './style';
 import { actionCreators } from './store';
 import logoPic from '../../statics/logoLogin.png';
 
 class Login extends PureComponent {
     render() {
-        const {loginStatus} = this.props;
+        const { loginStatus } = this.props;
         if (!loginStatus) {
             return (
                 <LoginWrapper>
@@ -29,6 +29,11 @@ class Login extends PureComponent {
                             <Input className="password" type="password" placeholder="密码" ref={(input) => {
                                 this.password = input
                             }}/>
+                            <div>
+                                <input type="checkbox" className="remember"/>记住我
+                                <LoginProblem>登录遇到问题？</LoginProblem>
+                            </div>
+
                         </Form>
                         <Button onClick={() => this.props.login(this.account, this.password)}>登录</Button>
                     </LoginBox>

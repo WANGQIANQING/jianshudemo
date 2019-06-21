@@ -110,4 +110,19 @@ export const Form = styled.form`
         top: 9px;
         color: #8c8c8c;
     }
+    .remember {
+        margin-left: 42px;
+    }
+    div {
+        margin: 10px 0;
+        position: relative;
+        color: #8d8d8d;
+    }
+`;
+
+export const LoginProblem = styled.span`
+    position: absolute;
+    right: 40px;
+    font-size: 13px;
+    line-height: 24px;
 `;
