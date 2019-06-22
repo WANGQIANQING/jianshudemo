@@ -47,7 +47,7 @@ class Header extends Component {
                     <Link to="/write">
                         <Btn className="write"><span className="iconfont">&#xe66f;</span>写文章</Btn>
                     </Link>
-                    <Btn className="reg">注册</Btn>
+                    <Link to="/register"><Btn className="reg">注册</Btn></Link>
                 </Addition>
             </HeaderWrapper>
         );

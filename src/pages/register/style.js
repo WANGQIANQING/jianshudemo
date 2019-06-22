@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const LoginWrapper = styled.div`
+export const RegisterWrapper = styled.div`
     z-index: 0;
     position: fixed;
     left: 0;
@@ -36,6 +36,9 @@ export const Input = styled.input`
         border-bottom: none;
         border-radius: 4px 4px 0 0;
     }
+    &.phone {
+        border-bottom: none;
+    }
     &.password {
         border-radius: 0 0 4px 4px;
     }
@@ -45,27 +48,13 @@ export const Input = styled.input`
     }
 `;
 
-export const Button = styled.div`
-    width: 260px;
-    height: 30px;
-    line-height: 30px;
-    color: #fff;
-    background: #3194d0;
-    border-radius: 15px;
-    margin: 30px auto;
-    text-align: center;
-    cursor: pointer;
-    :hover {
-        background: #187cb7;
-    }
-`;
-
 export const LogoImg = styled.img`
     width: 100px;
     position: absolute;
     top: 50px;
     left: 50px;
 `;
+
 
 export const TitleWrapper = styled.h4`
     text-align: center;
@@ -78,12 +67,12 @@ export const TitleWrapper = styled.h4`
         display: inline-block;
     }
     
-    .login {
-        font-weight: 700;
-        color: #ea6f5a;
+    .login:hover {
         border-bottom: 2px solid #ea6f5a;
     }
-    .register:hover {
+    .register {
+        font-weight: 700;
+        color: #ea6f5a;
         border-bottom: 2px solid #ea6f5a;
     }
 `;
@@ -97,7 +86,6 @@ export const Form = styled.form`
     i.account::before {
         content: '\\e649';
         position: absolute;
-        color: red;
         left: 50px;
         top: 9px;
         color: #8c8c8c;
@@ -105,30 +93,21 @@ export const Form = styled.form`
     i.password::before {
         content: '\\e620';
         position: absolute;
-        color: red;
         left: 50px;
         top: 9px;
         color: #8c8c8c;
     }
-    .remember {
-        margin-left: 42px;
+    i.phone::before {
+        content: '\\e601';
+        position: absolute;
+        left: 50px;
+        top: 9px;
+        color: #8c8c8c;
     }
-    div {
-        margin: 20px 0;
-        position: relative;
-        color: #8d8d8d;
-    }
-`;
-
-export const LoginProblem = styled.span`
-    position: absolute;
-    right: 40px;
-    font-size: 13px;
-    line-height: 24px;
 `;
 
 export const MoreSign = styled.div`
-    margin-top: 60px;
+    margin-top: 30px;
     text-align: center;
     font-weight: 100;
     h6 {
@@ -142,7 +121,7 @@ export const MoreSign = styled.div`
         border-top: 1px solid #b5b5b5;
         display: block;
         position: absolute;
-        width: 60px;
+        width: 50px;
         left: 60px;
         top: 6px;
     }
@@ -151,7 +130,7 @@ export const MoreSign = styled.div`
         border-top: 1px solid #b5b5b5;
         display: block;
         position: absolute;
-        width: 60px;
+        width: 50px;
         right: 60px;
         top: 6px;
     }
@@ -185,4 +164,31 @@ export const MoreSign = styled.div`
         text-decoration: none;
     }
     
+`;
+
+export const Button = styled.div`
+    width: 260px;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    background: #42c02e;
+    border-radius: 15px;
+    margin: 20px auto;
+    text-align: center;
+    cursor: pointer;
+    :hover {
+        background: #3db922;
+    }
+`;
+
+export const Promise = styled.p`
+    padding: 0;
+    text-align: center;
+    font-size: 12px;
+    line-height: 20px;
+    color: #969696;
+    margin: 0;
+    a {
+        color: #3194d0 !important;
+    }
 `;

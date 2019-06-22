@@ -6,6 +6,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Home from './pages/home';
 import Detail from './pages/detail/loadable';
 import Login from './pages/login';
+import Register from './pages/register';
 import Write from './pages/write';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
                     <Header/>
                     <Route path='/' exact component={Home}/>
                     <Route path='/login' exact component={Login}/>
+                    <Route path='/register' exact component={Register}/>
                     <Route path='/write' exact component={Write}/>
                     <Route path='/detail/:id' exact component={Detail}/>
                 </div>

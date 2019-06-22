@@ -132,7 +132,14 @@ export const Btn = styled.div`
     
     &.write {
         color: #fff;
-        background: #ec6149;
+        background: #ea6f5a;
+    }
+    &.write:hover {
+        background:#ec6149;
+    }
+    &.reg:hover {
+        border-color: #ec6149;
+        background-color: rgba(236,97,73,.05);
     }
 `;
 
